@@ -7,9 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>        <!-- CUSTOM STYLESHEET -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <!-- VUE -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- LUXON -->
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+        <!-- CUSTOM STYLESHEETS -->
         <!-- STYLE -->
         <link rel="stylesheet" href="css/style.css">
         <!-- COMMON -->
@@ -140,9 +143,10 @@
                                     <p>00:01</p>
                                 </div>
                             </div> -->
-                            <div v-for="(contact, index) in contacts">
+                            <div class="contact" v-for="(contact, index) in contacts">
                                 <div class="img-container">  <img :src="getAvatar(index)" alt=""> </div>
-                                {{contact.name}}
+                                <h5>{{contact.name}}</h5>
+                                <!-- <p>{{contact.messages}}</p> -->
                             </div>
                         </div>
                     </main>
@@ -174,7 +178,7 @@
                     <main class="right main">
                         <!-- CHAT -->
                         <div class="chat">
-                            <div class="message-container received">
+                            <!-- <div class="message-container received">
                                 <div class="message">
                                     <div class="message-body">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quidem soluta totam ab, non quod doloribus odio cumque perferendis repudiandae voluptatem quas quo, dolore iusto esse, similique nulla omnis. Temporibus?</p>
@@ -207,7 +211,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+                            
+                                <div class="message-container" v-for="(msg, indexMessage) in contacts[0].messages" :class="msg.status">
+                                    <div class="message">
+                                        <div>{{ msg.message }}</div>
+                                        <p>{{ msg.date }}</p>
+                                    </div>
+                                </div>
+                            
                         </div>
                     </main>
 

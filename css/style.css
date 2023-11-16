@@ -182,7 +182,7 @@
     border-radius: 12px;
     padding: 1rem;
     background-color: var(--white-color);
-    display: flex;
+    /* display: flex; */
     gap: 1rem;
 }
 
@@ -204,7 +204,7 @@
 }
 
 .message p{
-    color: var(--black-color);
+    /* color: var(--black-color); */
 }
 
 /* RECEIVED MESSAGE */
