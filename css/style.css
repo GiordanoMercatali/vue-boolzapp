@@ -1,0 +1,304 @@
+/*Custom properties*/
+:root{
+    --border: 1px solid var(--black-color);
+    --background-color-25: #009688;
+    --background-color-75: #dbdbd2;
+    --primary-color: #eaeaea;
+    --dark-color: #323232;
+    --notification-color: #8edafc;
+    --received-msg-color: #d5f9ba;
+    --white-color: white;
+    --black-color: black;
+}
+
+/*Reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*WEB APP CONTAINER*/
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(
+        to bottom,
+        var( --background-color-25) 0%,
+        var( --background-color-25) 25%,
+        var( --background-color-75) 25%,
+        var( --background-color-75) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*app*/
+.app{
+    width: 80%;
+    margin: auto;
+    /*debug*/
+    
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LEFT COLUMN */
+.left-col{
+    width: 35%;
+    /*debug*/
+    
+    background-color: var(--white-color);
+    height: 100%;
+}
+
+/* LEFT HEADER */
+.header.left{
+    border-right: 1px gray solid;
+}
+
+/* LEFT MAIN */
+.main.left{
+    width: 100%;
+    height: calc(100% - 4rem);
+}
+
+/* NOTIFICATIONS */
+.notifications{
+    width: 100%;
+    height: 4rem;
+    background-color: var(--notification-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.notifications .text-container{
+    width: calc(100% - 50px);
+}
+
+.notifications .text-container p{
+    text-decoration: underline;
+}
+
+.notifications .icon-container{
+    width: 50px;
+    height: 50px;
+    background-color: var(--white-color);
+    color: var(--notification-color);
+    font-size: 24px;
+}
+
+/*LEFT FORM*/
+.left.form input{
+    height: 30px;
+}
+
+.left.form .icon-container{
+    border-radius: 0;
+    background-color: var(--white-color);
+}
+
+/*CONTACTS LIST*/
+.contacts-list{
+    background-color: var(--white-color);
+    overflow-y: auto;
+    /* debug */
+    height: calc(100% - 8rem);
+}
+
+/* CONTACTS */
+.contact{
+    width: 100%;
+    /* debug */
+    height: calc(100% / 7);
+    min-height: 100px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+}
+
+.contact:hover{
+    background-color: var(--primary-color);
+}
+
+.contact .text-container:not(.hour){
+    width: calc(100% - 100px);
+}
+
+.text-container.hour{
+    width: 50px;
+    font-size: 13px;
+}
+
+/* RIGHT COLUMN */
+.right-col{
+    width: 65%;
+    /*debug*/
+    
+    background-color: var(--background-color-75);
+    height: 100%;
+}
+
+/*RIGHT HEADER*/
+.image-and-text{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/*RIGHT MAIN*/
+.main.right{
+    background-image: url(/img/mine.jpg);
+    background-size: contain;
+    height: calc(100% - 8rem);
+}
+
+/* CHAT */
+.chat{
+    width: 100%;
+    margin: auto;
+    padding: 1.5rem 2rem;
+    /* debug */
+    height: 100%;
+}
+
+/* MESSAGES */
+.message-container{
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.message{
+    width: 300px;
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: var(--white-color);
+    display: flex;
+    gap: 1rem;
+}
+
+.message-more{
+    display: flex;
+    flex-direction: column;
+    gap: 7.5rem;
+}
+
+.message-options{
+    position: relative;
+    top: 0;
+    left: 0;
+ }
+
+.message-hour{
+    font-size: 12px;
+    color: lightgray;
+}
+
+.message p{
+    color: var(--black-color);
+}
+
+/* RECEIVED MESSAGE */
+.message-container.received{
+   justify-content: flex-end;
+}
+
+.message-container.received .message{
+    background-color: var(--received-msg-color);
+ }
+
+ /* MESSAGE HOVER */
+ .hover-box{
+    width: 150px;
+    background-color: var(--white-color);
+    border: var(--border);
+    display: none;
+ }
+
+.message-options:hover .hover-box{
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+ }
+
+/*RIGHT FOOTER*/
+.footer{
+    height: 4rem;
+}
+
+/*RIGHT FORM*/
+.form.right{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: var(--primary-color);
+    gap: 1rem;
+    padding: 1rem;
+    /* debug */
+    height: 4rem;
+}
+
+.form.right input{
+    border-radius: 5px;
+}
+
+/*MICROPHONE ANIMATION*/
+.audio-message:active{
+    animation: recording 5s linear;
+}
+
+@keyframes recording{
+    
+    0%{
+        color: blue;
+        border: 1px solid blue;
+        border-radius: 50%;
+    }
+    
+    20%{
+        color: red;
+        border: 1px solid red;
+        border-radius: 50%;
+    }
+
+    40%{
+        color: blue;
+        border: 1px solid blue;
+        border-radius: 50%;
+    }
+    
+    60%{
+        color: red;
+        border: 1px solid red;
+        border-radius: 50%;
+    }
+
+    80%{
+        color: blue;
+        border: 1px solid blue;
+        border-radius: 50%;
+    }
+    
+    100%{
+        color: red;
+        border: 1px solid red;
+        border-radius: 50%;
+    }
+}

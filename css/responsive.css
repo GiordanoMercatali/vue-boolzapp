@@ -1,0 +1,88 @@
+/* TABLET VERSION */
+@media screen and (max-width: 540px) {
+    
+    /*ELEMENTS THAT'LL DISAPPEAR*/
+    .disappear-540{
+        display: none;
+    }
+
+    .left-col .text-container{
+        display: none;
+    }
+
+    /* app */
+    .app{
+        width: 100%;
+        /*debug*/
+        height: 100vh;
+    }
+
+    /* LEFT COLUMN */
+    .left-col {
+        width: 20%;
+    }
+
+    .left.nav{
+        justify-content: center;
+    }
+
+    .contacts-list{
+        height: 100%;
+    }
+
+    /* CONTACTS */
+    .contact{
+    height: calc(100% / 8);
+    justify-content: center;
+}
+
+    /* RIGHT COLUMN */
+    .right-col {
+        width: 80%;
+    }
+
+    /*MESSAGES*/
+    .message{
+        width: 200px;
+    }
+}
+/* MOBILE VERSION */
+@media screen and (max-width: 320px) {
+    
+    /*ELEMENTS THAT'LL DISAPPEAR*/
+    .disappear-320{
+        display: none;
+    }
+
+    /* RIGHT COLUMN */
+    .right-col {
+        width: 100%;
+    }
+}
+
+/* COLOR SCHEME */
+/* @media (prefers-color-scheme: dark){
+    :root{
+        --primary-color: var(--dark-color);
+        --background-color-75: gray;
+        --white-color: black;
+        --black-color: white;
+    }
+
+    .main.right{
+        
+        filter: invert();
+    }
+
+    .notifications h4, .received p{
+        color: black;
+    }
+
+    .icon-container{
+        color: lightgrey;
+    }
+
+    .message-options:hover .hover-box{
+        box-shadow: 10px 10px 5px rgba(255, 255, 255, 0.5);
+     }
+} */
