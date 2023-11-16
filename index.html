@@ -227,7 +227,7 @@
                     <footer class="footer">
                         <div class="right form disappear-540">
                             <div class="icon-container disappear-320"> <i class="fa-regular fa-face-smile"></i> </div>
-                            <input type="text" placeholder="lorem ipsum"/>
+                            <input type="text" v-model="newMessage.message" @keyup.enter="sendMessage"/>
                             <div class="icon-container disappear-320 audio-message"> <i class="fa-solid fa-microphone"></i> </div>
                         </div>
                     </footer>
@@ -238,7 +238,7 @@
             </div>
         </div>
         <script src="js/script.js"></script>
-        <!-- <script src="js/data.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
         </div>
     </body>
 </html>
