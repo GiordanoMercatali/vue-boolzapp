@@ -22,6 +22,8 @@
 	</head>
 
     <body>
+        <!-- APP -->
+        <div id="app">
         <!-- WEB APP CONTAINER -->
         <div class="wrapper">
             <!-- app -->
@@ -58,7 +60,7 @@
                         <!-- LIST OF CONTACTS -->
                         <div class="contacts-list">
                             <!-- CONTACT -->
-                            <div class="contact">
+                            <!-- <div class="contact">
                                 <div class="img-container"> <img src="img/avatar_1.jpg"> </div>
                                 <div class="text-container">
                                     <h4>lorem ipsum</h4>
@@ -137,8 +139,11 @@
                                 <div class="text-container hour">
                                     <p>00:01</p>
                                 </div>
+                            </div> -->
+                            <div v-for="(contact, index) in contacts">
+                                <div class="img-container">  <img :src="getAvatar(index)" alt=""> </div>
+                                {{contact.name}}
                             </div>
-                            
                         </div>
                     </main>
                 </div>
@@ -221,6 +226,7 @@
             </div>
         </div>
         <script src="js/script.js"></script>
-        <script src="js/data.js"></script>
+        <!-- <script src="js/data.js"></script> -->
+        </div>
     </body>
 </html>
