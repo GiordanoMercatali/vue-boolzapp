@@ -245,12 +245,12 @@ createApp({
             return this.contacts[indexMsg].messages[lastIndex];
         },
 
-        deleteMessage: function(index, indexDelete){
-            // if(this.contacts[index].messages.status === 'sent'){
-                
-            // }
-
-            this.contacts[index].messages.splice(indexDelete, 1);
+        deleteMessage: function(index, indexDelete, msgStatus){
+            if(msgStatus === 'sent'){
+                this.contacts[index].messages.splice(indexDelete, 1);
+            } else {
+                console.log("Can't delete others' messages")
+            }
         },
     },
 
