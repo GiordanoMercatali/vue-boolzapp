@@ -9,6 +9,7 @@ createApp({
         return{
 
             curContactIndex: 0,
+            searchText: "",
 
             contacts: [
                 {
@@ -216,9 +217,22 @@ createApp({
             this.contacts[indexReceived].messages.push(this.botMessage);
         },
 
-        setActivePlayer: function(i){
-            this.curContactIndex = i;
+        setActivePlayer: function(indexActive){
+            this.curContactIndex = indexActive;
             console.log(this.curContactIndex);
+        },
+
+        searchContact: function(){
+            let search = this.searchText.toLowerCase();
+            this.contacts.forEach(element => {
+                if(element.name.toLowerCase().includes
+                (search)) {
+                    element.visible = true;
+                } else{
+                    element.visible = false;
+                }
+            })
+            console.log(search);
         }
     },
 

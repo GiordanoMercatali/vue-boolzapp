@@ -58,7 +58,7 @@
                         <!-- FORM -->
                         <div class="left form disappear-540">
                             <label for="search-bar"><div class="icon-container"> <i class="fa-solid fa-magnifying-glass"></i> </div></label>
-                            <input type="text" id="search-bar" placeholder="lorem ipsum"/>
+                            <input type="text" v-model="searchText" id="search-bar" placeholder="Search..." @keyup="searchContact" />
                         </div>
                         <!-- LIST OF CONTACTS -->
                         <div class="contacts-list">
@@ -143,7 +143,7 @@
                                     <p>00:01</p>
                                 </div>
                             </div> -->
-                            <div class="contact" v-for="(contact, index) in contacts" :key="contact.name"  @click="setActivePlayer(index)">
+                            <div class="contact" v-for="(contact, index) in contacts" v-show="contact.visible" :key="contact.name"  @click="setActivePlayer(index)">
                                 <div class="img-container">  <img :src="getAvatar(index)" alt=""> </div>
                                 <h5>{{contact.name}}</h5>
                             </div>
