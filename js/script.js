@@ -194,8 +194,8 @@ createApp({
         },
 
         setActivePlayer: function(i){
-            this.curPlayerIndex = i;
-            console.log(this.curPlayerIndex);
+            this.curContactIndex = i;
+            console.log(this.curContactIndex);
         }
     },
 
