@@ -7,6 +7,9 @@ console.log(dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED_WITH_SECONDS
 createApp({
     data(){
         return{
+
+            curPlayerIndex: 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -189,6 +192,11 @@ createApp({
             this.contacts.messages.push(this.newMessage);
             console.log("Ciao");
         },
+
+        setActivePlayer: function(i){
+            this.curPlayerIndex = i;
+            console.log(this.curPlayerIndex);
+        }
     },
 
     created(){

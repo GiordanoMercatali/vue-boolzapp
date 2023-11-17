@@ -143,10 +143,9 @@
                                     <p>00:01</p>
                                 </div>
                             </div> -->
-                            <div class="contact" v-for="(contact, index) in contacts">
+                            <div class="contact" v-for="(contact, index) in contacts" :key="contact.name"  @click="setActivePlayer(index)">
                                 <div class="img-container">  <img :src="getAvatar(index)" alt=""> </div>
                                 <h5>{{contact.name}}</h5>
-                                <!-- <p>{{contact.messages}}</p> -->
                             </div>
                         </div>
                     </main>
@@ -159,9 +158,9 @@
                         <!-- NAV -->
                         <div class="right nav">
                             <div class="image-and-text">
-                                <div class="img-container"> <img src="img/avatar_1.jpg" alt=""> </div>
+                                <div class="img-container"> <img :src="getAvatar(curPlayerIndex)" alt=""> </div>
                                 <div class="text-container">
-                                    <h4>lorem ipsum</h4>
+                                    <h4>{{contacts[curPlayerIndex].name}}</h4>
                                     <p>lorem ipsum dolor sit amet</p>
                                 </div>
                             </div>
@@ -213,7 +212,7 @@
                                 </div>
                             </div> -->
                             
-                                <div class="message-container" v-for="(msg, indexMessage) in contacts[0].messages" :class="msg.status">
+                                <div class="message-container" v-for="(msg, indexMessage) in contacts[curPlayerIndex].messages" :class="msg.status">
                                     <div class="message">
                                         <div>{{ msg.message }}</div>
                                         <p>{{ msg.date }}</p>
