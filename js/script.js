@@ -179,6 +179,12 @@ createApp({
                 message: '',
                 status: 'sent'
             },
+
+            botMessage: {
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED_WITH_SECONDS),
+                message: 'ok',
+                status: 'received'
+            },
         };
         
     },
@@ -192,6 +198,7 @@ createApp({
             
             if(this.newMessage.message !== ""){
                 this.contacts[index].messages.push(this.newMessage);
+                this.receiveMessage(this.curContactIndex);
             }
 
             this.newMessage = {
@@ -202,6 +209,9 @@ createApp({
         },
 
         
+        receiveMessage: function(indexReceived){
+            this.contacts[indexReceived].messages.push(this.botMessage);
+        },
 
         setActivePlayer: function(i){
             this.curContactIndex = i;
