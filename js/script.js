@@ -189,8 +189,13 @@ createApp({
           },
 
         sendMessage: function(index){
-            this.contacts.messages.push(this.newMessage);
-            console.log("Ciao");
+            this.contacts[index].messages.push(this.newMessage);
+
+            this.newMessage = {
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED_WITH_SECONDS),
+                message: '',
+                status: 'sent',
+            };
         },
 
         setActivePlayer: function(i){
