@@ -198,7 +198,10 @@ createApp({
             
             if(this.newMessage.message !== ""){
                 this.contacts[index].messages.push(this.newMessage);
-                this.receiveMessage(this.curContactIndex);
+                // this.receiveMessage(this.curContactIndex);
+                setTimeout(()=>{
+                    this.receiveMessage(this.curContactIndex);
+                }, "2000")
             }
 
             this.newMessage = {
