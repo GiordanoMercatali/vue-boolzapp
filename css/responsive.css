@@ -74,7 +74,7 @@
         filter: invert();
     }
 
-    .notifications h4, .received p{
+    .notifications h4, .sent p{
         color: black;
     }
 

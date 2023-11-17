@@ -6,7 +6,7 @@
     --primary-color: #eaeaea;
     --dark-color: #323232;
     --notification-color: #8edafc;
-    --received-msg-color: #d5f9ba;
+    --sent-msg-color: #d5f9ba;
     --white-color: white;
     --black-color: black;
 }
@@ -207,13 +207,13 @@
     /* color: var(--black-color); */
 }
 
-/* RECEIVED MESSAGE */
-.message-container.received{
+/* sent MESSAGE */
+.message-container.sent{
    justify-content: flex-end;
 }
 
-.message-container.received .message{
-    background-color: var(--received-msg-color);
+.message-container.sent .message{
+    background-color: var(--sent-msg-color);
  }
 
  /* MESSAGE HOVER */
