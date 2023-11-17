@@ -145,7 +145,12 @@
                             </div> -->
                             <div class="contact" v-for="(contact, index) in contacts" v-show="contact.visible" :key="contact.name"  @click="setActivePlayer(index)">
                                 <div class="img-container">  <img :src="getAvatar(index)" alt=""> </div>
-                                <h5>{{contact.name}}</h5>
+                                <div class="first-line">
+                                    <h5>{{contact.name}}</h5>
+                                    <p>{{getLastMessage(index).message}}</p>
+                                </div>
+                                <span>{{getLastMessage(index).date}}</span>
+                                
                             </div>
                         </div>
                     </main>
@@ -161,7 +166,7 @@
                                 <div class="img-container"> <img :src="getAvatar(curContactIndex)" alt=""> </div>
                                 <div class="text-container">
                                     <h4>{{contacts[curContactIndex].name}}</h4>
-                                    <p>lorem ipsum dolor sit amet</p>
+                                    <p>{{getLastMessage(curContactIndex).date}}</p>
                                 </div>
                             </div>
                             <!-- LIST -->

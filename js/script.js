@@ -233,8 +233,15 @@ createApp({
                 }
             })
             console.log(search);
+        },
+
+        getLastMessage: function(indexMsg){
+            let lastIndex = this.contacts[indexMsg].messages.length - 1;
+            return this.contacts[indexMsg].messages[lastIndex];
         }
     },
+
+    
 
     created(){
         
