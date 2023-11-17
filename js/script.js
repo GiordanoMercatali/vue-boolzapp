@@ -243,7 +243,15 @@ createApp({
         getLastMessage: function(indexMsg){
             let lastIndex = this.contacts[indexMsg].messages.length - 1;
             return this.contacts[indexMsg].messages[lastIndex];
-        }
+        },
+
+        deleteMessage: function(index, indexDelete){
+            // if(this.contacts[index].messages.status === 'sent'){
+                
+            // }
+
+            this.contacts[index].messages.splice(indexDelete, 1);
+        },
     },
 
     
