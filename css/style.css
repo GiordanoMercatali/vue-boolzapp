@@ -167,6 +167,7 @@
     padding: 1.5rem 2rem;
     /* debug */
     height: 100%;
+    overflow-y: auto;
 }
 
 /* MESSAGES */

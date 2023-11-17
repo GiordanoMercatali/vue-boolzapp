@@ -189,7 +189,10 @@ createApp({
           },
 
         sendMessage: function(index){
-            this.contacts[index].messages.push(this.newMessage);
+            
+            if(this.newMessage.message !== ""){
+                this.contacts[index].messages.push(this.newMessage);
+            }
 
             this.newMessage = {
                 date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED_WITH_SECONDS),
@@ -197,6 +200,8 @@ createApp({
                 status: 'sent',
             };
         },
+
+        
 
         setActivePlayer: function(i){
             this.curContactIndex = i;
