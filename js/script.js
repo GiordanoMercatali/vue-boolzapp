@@ -7,7 +7,6 @@ console.log(dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED_WITH_SECONDS
 createApp({
     data(){
         return{
-
             curContactIndex: 0,
             searchText: "",
 
@@ -215,6 +214,12 @@ createApp({
         
         receiveMessage: function(indexReceived){
             this.contacts[indexReceived].messages.push(this.botMessage);
+
+            this.botMessage = {
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_MED_WITH_SECONDS),
+                message: 'ok',
+                status: 'received',
+            };
         },
 
         setActivePlayer: function(indexActive){
