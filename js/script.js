@@ -8,7 +8,7 @@ createApp({
     data(){
         return{
 
-            curPlayerIndex: 0,
+            curContactIndex: 0,
 
             contacts: [
                 {

@@ -158,9 +158,9 @@
                         <!-- NAV -->
                         <div class="right nav">
                             <div class="image-and-text">
-                                <div class="img-container"> <img :src="getAvatar(curPlayerIndex)" alt=""> </div>
+                                <div class="img-container"> <img :src="getAvatar(curContactIndex)" alt=""> </div>
                                 <div class="text-container">
-                                    <h4>{{contacts[curPlayerIndex].name}}</h4>
+                                    <h4>{{contacts[curContactIndex].name}}</h4>
                                     <p>lorem ipsum dolor sit amet</p>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
                                 </div>
                             </div> -->
                             
-                                <div class="message-container" v-for="(msg, indexMessage) in contacts[curPlayerIndex].messages" :class="msg.status">
+                                <div class="message-container" v-for="(msg, indexMessage) in contacts[curContactIndex].messages" :class="msg.status">
                                     <div class="message">
                                         <div>{{ msg.message }}</div>
                                         <p>{{ msg.date }}</p>
