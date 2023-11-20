@@ -199,9 +199,7 @@
 }
 
 .message-options{
-    position: relative;
-    top: 0;
-    left: 0;
+    margin-left: 5rem;
  }
 
 .message-hour{
@@ -241,6 +239,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    gap: 1rem;
  }
 
 /*RIGHT FOOTER*/
