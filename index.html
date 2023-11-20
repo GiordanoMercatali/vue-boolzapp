@@ -50,8 +50,8 @@
                         <div class="notifications disappear-540">
                             <div class="icon-container"> <i class="fa-solid fa-bell-slash"></i> </div>
                                 <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
+                                    <h4>Notifications</h4>
+                                    <p>Enable notifications</p>
                                 </div>
                         </div>
 
@@ -63,94 +63,12 @@
                         <!-- LIST OF CONTACTS -->
                         <div class="contacts-list">
                             <!-- CONTACT -->
-                            <!-- <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_1.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>14:55</p>
-                                </div>
-                            </div>
-                            <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_2.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>09:20</p>
-                                </div>
-                            </div>
-                            <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_3.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>17:30</p>
-                                </div>
-                            </div>
-                            <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_4.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>22:05</p>
-                                </div>
-                            </div>
-                            <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_5.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>21:15</p>
-                                </div>
-                            </div>
-                            <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_6.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>16:45</p>
-                                </div>
-                            </div>
-                            <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_7.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>10:10</p>
-                                </div>
-                            </div>
-                            <div class="contact">
-                                <div class="img-container"> <img src="img/avatar_8.jpg"> </div>
-                                <div class="text-container">
-                                    <h4>lorem ipsum</h4>
-                                    <p>lorem ipsum</p>
-                                </div>
-                                <div class="text-container hour">
-                                    <p>00:01</p>
-                                </div>
-                            </div> -->
                             <div class="contact" v-for="(contact, index) in contacts" v-show="contact.visible" :key="contact.name"  @click="setActivePlayer(index)">
                                 <div class="img-container">  <img :src="getAvatar(index)" alt=""> </div>
                                 <div class="first-line">
-                                    <h5>{{contact.name}}</h5>
+                                    <h5>{{contact.name}} <span class="position-relative top-0 start-50">{{getLastMessage(index).date}}</span> </h5>
                                     <p>{{getLastMessage(index).message}}</p>
                                 </div>
-                                <span>{{getLastMessage(index).date}}</span>
-                                
                             </div>
                         </div>
                     </main>
@@ -182,40 +100,6 @@
                     <main class="right main">
                         <!-- CHAT -->
                         <div class="chat">
-                            <!-- <div class="message-container sent">
-                                <div class="message">
-                                    <div class="message-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quidem soluta totam ab, non quod doloribus odio cumque perferendis repudiandae voluptatem quas quo, dolore iusto esse, similique nulla omnis. Temporibus?</p>
-                                    </div>
-                                    <div class="message-more">
-                                        <div class="message-options">
-                                            <p><i class="fa-solid fa-angle-down"></i></p>
-                                        </div>
-                                        <div class="message-hour">
-                                            <p>00:00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="message-container">
-                                <div class="message">
-                                    <div class="message-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt quidem soluta totam ab, non quod doloribus odio cumque perferendis repudiandae voluptatem quas quo, dolore iusto esse, similique nulla omnis. Temporibus?</p>
-                                    </div>
-                                    <div class="message-more">
-                                        <div class="message-options">
-                                            <div class="hover-box">
-                                                <p>lorem ipsum</p>
-                                                <p>lorem ipsum</p>
-                                            </div>
-                                            <p><i class="fa-solid fa-angle-down"></i></p>
-                                        </div>
-                                        <div class="message-hour">
-                                            <p>00:00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             
                                 <div class="message-container" v-for="(msg, indexMessage) in contacts[curContactIndex].messages" :key="msg.date" :class="msg.status">
                                     <div class="message">

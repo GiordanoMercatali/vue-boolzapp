@@ -9,6 +9,7 @@ createApp({
         return{
             curContactIndex: 0,
             searchText: "",
+            searchMsgText: "",
 
             contacts: [
                 {
@@ -232,6 +233,19 @@ createApp({
             this.contacts.forEach(element => {
                 if(element.name.toLowerCase().includes
                 (search)) {
+                    element.visible = true;
+                } else{
+                    element.visible = false;
+                }
+            })
+            console.log(search);
+        },
+
+        searchMessage: function(index){
+            let searchMsg = this.searchMsgText.toLowerCase();
+            this.contacts[index].messages.forEach(element => {
+                if(element.message.toLowerCase().includes
+                (searchMsg)) {
                     element.visible = true;
                 } else{
                     element.visible = false;
