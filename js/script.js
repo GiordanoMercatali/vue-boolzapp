@@ -223,7 +223,7 @@ createApp({
             };
         },
 
-        setActivePlayer: function(indexActive){
+        setActiveContact: function(indexActive){
             this.curContactIndex = indexActive;
             console.log(this.curContactIndex);
         },

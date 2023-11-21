@@ -63,7 +63,7 @@
                         <!-- LIST OF CONTACTS -->
                         <div class="contacts-list">
                             <!-- CONTACT -->
-                            <div class="contact" v-for="(contact, index) in contacts" v-show="contact.visible" :key="contact.name"  @click="setActivePlayer(index)">
+                            <div class="contact" v-for="(contact, index) in contacts" v-show="contact.visible" :key="contact.name"  @click="setActiveContact(index)">
                                 <div class="img-container">  <img :src="getAvatar(index)" alt=""> </div>
                                 <div class="first-line disappear-540">
                                     <h5>{{contact.name}} <span class="position-relative top-0 start-50">{{getLastMessage(index).date}}</span> </h5>
